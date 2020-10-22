@@ -11,12 +11,12 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
-public class EmployeeDaoImpl implements EmployeeDao {
+public class EmployeeDaoHibernateImpl implements EmployeeDao {
 
     private EntityManager entityManager;
 
     @Autowired
-    public EmployeeDaoImpl(EntityManager theEntityManager) {
+    public EmployeeDaoHibernateImpl(EntityManager theEntityManager) {
         entityManager = theEntityManager;
     }
 

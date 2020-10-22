@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ru.cofeok</groupId>
 	<artifactId>springboot-crud-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
 	<name>springboot-crud-demo</name>
 	<description>Demo project for Spring Boot</description>

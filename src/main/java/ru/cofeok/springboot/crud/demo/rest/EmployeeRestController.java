@@ -2,7 +2,6 @@ package ru.cofeok.springboot.crud.demo.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.cofeok.springboot.crud.demo.dao.EmployeeDao;
 import ru.cofeok.springboot.crud.demo.entity.Employee;
 import ru.cofeok.springboot.crud.demo.service.EmployeeService;
 
@@ -20,13 +19,14 @@ public class EmployeeRestController {
     }
 
     @GetMapping("/employees")
-    public List<Employee> findAll() {
+    public List<Employee> findAll()
+    {
         return employeeService.findAll();
     }
 
     @GetMapping("/employees/{employeeId}")
     public Employee getEmployee(@PathVariable int employeeId) {
-        Employee theEmployee =  employeeService.findById(employeeId);
+        Employee theEmployee = employeeService.findById(employeeId);
 
         if (theEmployee == null) {
             throw new RuntimeException("Employee id not found - " + employeeId);
@@ -51,12 +51,12 @@ public class EmployeeRestController {
 
     @DeleteMapping("/employees/{employeeId}")
     public String deleteById(@PathVariable int employeeId) {
-        Employee theEmployee =  employeeService.findById(employeeId);
+        Employee theEmployee = employeeService.findById(employeeId);
 
         if (theEmployee == null) {
             throw new RuntimeException("Employee id not found - " + employeeId);
         }
         employeeService.deleteById(employeeId);
-        return "Deleted employee id - " +  employeeId;
+        return "Deleted employee id - " + employeeId;
     }
 }

@@ -4,6 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import ru.cofeok.springboot.crud.demo.entity.Employee;
 
-@RepositoryRestResource(path = "clients")
+import java.util.List;
+
+@RepositoryRestResource(path = "employees")
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+    public List<Employee> findAllByOrderByLastNameAsc();
 }
